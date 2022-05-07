@@ -1,9 +1,3 @@
-# DFMH_codes
-## codes for Deep Factorized Multi-modal Hashing for Image Retrieval
-## MIRFLICR dataset:
-## https://pan.baidu.com/s/1PjZ0lyBKUI7yAoULlIzEdw?pwd=bgkv
-
-
 # Deep Factorized Multi-view Hashing for Image Retrieval
 
 ### Deep Factorized Multi-view Hashing
@@ -12,6 +6,7 @@ The details can be found in the our paper.
 
 This code has been evaluated on Matlab.
 
+#### MIRFLICR dataset: https://pan.baidu.com/s/1PjZ0lyBKUI7yAoULlIzEdw?pwd=bgkv
 
 #### Citation:
 
