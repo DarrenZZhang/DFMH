@@ -3,7 +3,7 @@ clear;clear memory;
 addpath('./tools')
 % dataname = 'mirflickr';
 nbits_set = [32];%[8,16,32,48,64,96,128];
-dataname = {'mirflickr'};%[iaprtc12,pascal07,espgame,Corel5k];
+dataname = {'mirflickr'};
 for i=1:size(dataname,2)  
 load([dataname{i} '.mat']);
 fprintf([ dataname{i} ' dataset loaded...\n']);
@@ -40,9 +40,10 @@ for n_iters = 1:1
 		data_our.indexTrain= tr_idx;
 		data_our.indexTest= tt_idx;
 		ttfea = cell(1,view_num);
+		
 		for view = 1:view_num
-		data_our.X{view} = normEqualVariance(XX{view}')';
-		ttfea{view} = data_our.X{view}(:,tt_idx);
+			data_our.X{view} = normEqualVariance(XX{view}')';
+			ttfea{view} = data_our.X{view}(:,tt_idx);
 		end
 
 		pars.beta       = 10; % parameters\lambda.5
@@ -72,7 +73,7 @@ for n_iters = 1:1
 		%% Evaluation
 		B1 = compactbit(B_trn);
 		B2 = compactbit(B_tst);
-	       %% evaluation
+		%% evaluation
 		disp('Evaluation of DFMH...');
 		DHamm = hammingDist(B2, B1);
 		[~, orderH] = sort(DHamm, 2);
